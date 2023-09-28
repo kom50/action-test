@@ -17,3 +17,4 @@ jobs:
         run: |
           echo "Hello, Om"
           ls
+          ./deploy.sh
