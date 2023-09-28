@@ -16,3 +16,4 @@ jobs:
       - name: Run Bash Command
         run: |
           echo "Hello, Om"
+          ./deploy.sh
