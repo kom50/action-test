@@ -14,11 +14,16 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Set Git Config
+        env: # Or as an environment variable
+          EMAIL: ${{ secrets.EMAIL }}
+
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${{ secrets.EMAIL }}"
           echo ${GITHUB_ACTOR}
           echo ${{ secrets.EMAIL }}
+          echo ${{ EMAIL }}
+
           echo "Done"
 
       - name: Run Bash Command
