@@ -21,6 +21,9 @@ jobs:
           echo ${{ secrets.EMAIL }}
           echo "Done"
 
+      - name: Grant execute permissions to deploy.sh
+        run: chmod +x deploy.sh
+        
       - name: Run Bash Command
         run: |
           echo "Hello, Om"
