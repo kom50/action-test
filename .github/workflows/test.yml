@@ -13,8 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
+      - name: Set Git Config
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "your.email@example.com"
+          echo ${GITHUB_ACTOR}
+
       - name: Run Bash Command
         run: |
           echo "Hello, Om"
           ls
-          ./deploy.sh
+          ./deploy.sh 
