@@ -3,6 +3,9 @@
 # abort on errors
 set -e
 
+# Install packages
+npm i
+
 # build
 npm run build
 
