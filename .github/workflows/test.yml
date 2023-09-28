@@ -19,6 +19,7 @@ jobs:
           git config --global user.email "${{ secrets.EMAIL }}"
           echo ${GITHUB_ACTOR}
           echo ${{ secrets.EMAIL }}
+          echo "Done"
 
       - name: Run Bash Command
         run: |
