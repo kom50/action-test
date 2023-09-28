@@ -11,7 +11,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       
       - name: Set Git Config 
         run: |
@@ -23,7 +23,7 @@ jobs:
 
       - name: Grant execute permissions to deploy.sh
         run: chmod +x deploy.sh
-        
+
       - name: Run Bash Command
         run: |
           echo "Hello, Om"
