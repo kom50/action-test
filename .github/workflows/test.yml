@@ -16,7 +16,7 @@ jobs:
       - name: Set Git Config 
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email "${{ secrets.EMAIL }}"
+          git config --global user.email "omprakashkartik82280@gmail.com"
           echo ${GITHUB_ACTOR}
           echo ${{ secrets.EMAIL }}
           echo "Done"
