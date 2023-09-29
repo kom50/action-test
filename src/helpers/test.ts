@@ -15,3 +15,7 @@ function sayHello1() {
 function sayHello2() {
     console.log("Hello om")
 }
+
+function sayHello3() {
+    console.log("Hello om")
+}
