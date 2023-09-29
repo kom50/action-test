@@ -17,17 +17,17 @@ jobs:
         node-version: '16.x'
         cache: 'npm'
         
-    - name: Git config
-      run: |
-        git config --global user.email "${{ secrets.GH_ORG_EMAIL }}"
-        git config --global user.name "${{ secrets.GH_ORG_NAME }}"
+      - name: Git config
+        run: |
+          git config --global user.email "${{ secrets.GH_ORG_EMAIL }}"
+          git config --global user.name "${{ secrets.GH_ORG_NAME }}"
+          
+      - name: Apply version bump
+        run: | 
+          npm version patch
+          
+      - name: Git push version bump
+        run: git push origin main --follow-tags --force
         
-    - name: Apply version bump
-      run: | 
-        npm version patch
-        
-    - name: Git push version bump
-      run: git push origin main --follow-tags --force
-      
-    - id: set-version
-      name: Output version change
+      - id: set-version
+        name: Output version change
