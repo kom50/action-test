@@ -19,3 +19,8 @@ function sayHello2() {
 function sayHello3() {
     console.log("Hello om")
 }
+
+
+function sayHello4() {
+    console.log("Hello om")
+}
