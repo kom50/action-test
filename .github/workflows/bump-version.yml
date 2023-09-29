@@ -28,19 +28,12 @@ jobs:
           git config --global user.name "${{ secrets.GH_ORG_NAME }}"
           
       - name: Apply version bump
-        run: |
-          if [[ " ${GITHUB_EVENT_PULL_REQUEST_LABELS[*]} " == *" major "* ]]; then
-            npm version major
-          elif [[ " ${GITHUB_EVENT_PULL_REQUEST_LABELS[*]} " == *" minor "* ]]; then
-            npm version minor
-          elif [[ " ${GITHUB_EVENT_PULL_REQUEST_LABELS[*]} " == *" patch "* ]]; then
-            npm version patch
-          else
-            echo "No version bump label found."
-          fi
+        run: | 
+          npm version patch
+          
           
       - name: Git push version bump
-        run: git push origin dev --follow-tags --force
+        run: git push origin main --follow-tags --force
         
       - id: set-version
         name: Output version change
