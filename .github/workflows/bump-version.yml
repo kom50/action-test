@@ -1,11 +1,9 @@
 name: 'Dev - PR Close'
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - closed
 
 jobs:
   merge_pr:
