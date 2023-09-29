@@ -5,32 +5,29 @@ on:
     branches:
       - main
 
-jobs:
-  merge_pr:
-    name: 'PR Merged'
-    if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GH_ORG_PAT }}
-          
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
-          cache: 'npm'
-          
-      - name: Git config
-        run: |
-          git config --global user.email "${{ secrets.GH_ORG_EMAIL }}"
-          git config --global user.name "${{ secrets.GH_ORG_NAME }}"
-          
-      - name: Apply version bump
-        run: | 
-          npm version patch
-          
-      - name: Git push version bump
-        run: git push origin main --follow-tags --force
+jobs: 
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.GH_ORG_PAT }}
         
-      - id: set-version
-        name: Output version change
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+        cache: 'npm'
+        
+    - name: Git config
+      run: |
+        git config --global user.email "${{ secrets.GH_ORG_EMAIL }}"
+        git config --global user.name "${{ secrets.GH_ORG_NAME }}"
+        
+    - name: Apply version bump
+      run: | 
+        npm version patch
+        
+    - name: Git push version bump
+      run: git push origin main --follow-tags --force
+      
+    - id: set-version
+      name: Output version change
