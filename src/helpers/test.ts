@@ -10,3 +10,8 @@ function sayHello() {
 function sayHello1() {
     console.log("Hello om")
 }
+
+
+function sayHello2() {
+    console.log("Hello om")
+}
