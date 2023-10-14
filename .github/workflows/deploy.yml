@@ -56,8 +56,6 @@ jobs:
         git add dist -f
         git commit -m 'Deploying to gh-pages"' 
         
-        git push origin gh-pages -f
-
         cd ..
 
         git subtree push --prefix dist origin gh-pages
