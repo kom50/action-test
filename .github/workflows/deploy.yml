@@ -21,6 +21,9 @@ jobs:
 
         ls
 
+        rm -rm dist
+        ls
+
         # build
         npm run build
 
