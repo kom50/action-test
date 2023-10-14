@@ -15,5 +15,11 @@ jobs:
         git add .
         git commit -m "Commit message"
         git push origin om
+    - name: Grant execute permissions to deploy.sh
+      run: |
+        chmod +x deploy.sh
+        ls
+        ./deploy.sh
+        
       env:
         github-token: ${{ secrets.GH_TOKEN }}
