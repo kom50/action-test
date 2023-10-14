@@ -40,26 +40,11 @@ jobs:
         # git pull origin gh-pages
         # git reset --hard HEAD
 
-        # git add dist -f 
-
-        # git subtree add --prefix=dist origin gh-pages
-
-
-        git fetch origin
-
-        git checkout origin/gh-pages
-
-        git switch -c gh-pages
-
-        git reset --hard HEAD
-
         git add dist -f
         git commit -m 'Deploying to gh-pages"' 
-        
-        cd ..
+        git subtree push --prefix dist origin gh-pages -f
 
-        git subtree push --prefix dist origin gh-pages
-        # git subtree push --prefix dist origin gh-pages -f
+        # git subtree push --prefix dist origin gh-pages
 
         echo 'Done'
       env:
