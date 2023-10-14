@@ -14,4 +14,4 @@ jobs:
         echo "Hello, world!" > file.txt
         git add .
         git commit -m "Commit message"
-        git push
+        git push origin om
