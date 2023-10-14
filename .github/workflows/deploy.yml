@@ -44,9 +44,14 @@ jobs:
 
         # git subtree add --prefix=dist origin gh-pages
 
-        cd dist
 
-        git checkout -b gh-pages
+        git fetch origin
+
+        git checkout origin/gh-pages
+
+        git reset --hard HEAD~1
+        
+        cd dist
 
         git add . -f
         git commit -m 'Deploying to gh-pages"' 
