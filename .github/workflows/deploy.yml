@@ -42,7 +42,7 @@ jobs:
 
         # git add dist -f 
 
-        git subtree add --prefix=dist origin gh-pages
+        # git subtree add --prefix=dist origin gh-pages
 
         cd dist
 
