@@ -46,7 +46,7 @@ jobs:
 
         cd dist
 
-        git add .
+        git add . -f
         git commit -m 'Deploying to gh-pages"' 
         git push origin gh-pages
 
