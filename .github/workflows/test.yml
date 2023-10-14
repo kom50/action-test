@@ -11,6 +11,7 @@ jobs:
         git config --global user.email "omprakashkartik82280@gmail.com"
         git config --global user.name "kom50"
         git checkout -b om
+        echo "Hello, world!" > file.txt
         git add .
         git commit -m "Commit message"
         git push
