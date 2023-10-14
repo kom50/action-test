@@ -46,8 +46,8 @@ jobs:
 
         cd dist
 
+        git checkout -b gh-pages
 
-        git fetch origin
         git add . -f
         git commit -m 'Deploying to gh-pages"' 
         
