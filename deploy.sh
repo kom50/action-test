@@ -25,9 +25,9 @@ git add -A
 git commit -m 'deploy' 
 
 git remote -v
-git remote add origin https://github.com/kom50/action-test.git
+git remote add origin https://kom50:$GITHUB_TOKEN@github/kom50/action-test.git
 git remote -v
 # git push -f origin main:gh-pages
-git push origin main:gh-pages -f
+git push origin main:gh-pages -f -u $GITHUB_TOKEN
 
 cd -
