@@ -49,8 +49,10 @@ jobs:
 
         git checkout origin/gh-pages
 
-        git reset --hard HEAD~1
-        
+        git switch -c gh-pages
+
+        git reset --hard HEAD
+
         cd dist
 
         git add . -f
