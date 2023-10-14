@@ -41,7 +41,6 @@ jobs:
         git commit -m 'Deploying to gh-pages"' 
         git subtree push --prefix dist origin gh-pages
         # git subtree push --prefix dist origin gh-pages
-        
 
         echo 'Done'
       env:
