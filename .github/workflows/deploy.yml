@@ -32,9 +32,7 @@ jobs:
 
         git add dist -f
         git commit -m 'Deploying to gh-pages"' 
-        git subtree push --prefix dist origin main:gh-pages
-
-        # git subtree push --force --prefix dist origin gh-pages
+        git subtree push --force --prefix dist origin main:gh-pages
 
         echo 'Done'
       env:
