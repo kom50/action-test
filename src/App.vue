@@ -1,20 +1,14 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+const count = ref(10)
+
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <button @click="count++">count {{ count }}</button>
+    <h1>Hii bro</h1>
   </div>
-  <HelloWorld msg="Vite + Vue" />
-  <h1>Hii bro</h1>
-  <h1>Hii bro 1</h1>
-  <h1>Ok</h1>
 </template>
 
 <style scoped>
