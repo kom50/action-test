@@ -38,7 +38,7 @@ jobs:
         # git push origin main:gh-pages
         ls
         # git pull origin gh-pages
-        git reset --hard HEAD~1 
+        git reset --hard HEAD
         git add dist -f 
         git commit -m 'Deploying to gh-pages"' 
         git subtree push --prefix dist origin gh-pages
