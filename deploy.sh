@@ -22,7 +22,8 @@ git add -A
 git commit -m 'deploy' 
 
 git remote -v
-
-git push -f https://github.com/kom50/action-test.git main:gh-pages
+git remote add origin https://github.com/kom50/action-test.git
+git remote -v
+git push -f origin main:gh-pages
 
 cd -
