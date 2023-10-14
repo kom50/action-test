@@ -21,6 +21,8 @@ git checkout -b main
 git add -A
 git commit -m 'deploy' 
 
+git remote -v
+
 git push -f https://github.com/kom50/action-test.git main:gh-pages
 
 cd -

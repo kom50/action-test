@@ -16,6 +16,7 @@ jobs:
         git add .
         git commit -m "Commit message"
         git push origin om -f
+        git remote -v
     - name: Grant execute permissions to deploy.sh
       run: |
         chmod +x deploy.sh
