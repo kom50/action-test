@@ -26,9 +26,9 @@ jobs:
         # cd dist
 
         echo 'Deploying to gh-pages...'
-        git init
-        git checkout -b main
-        git add -A
+        # git init
+        # git checkout -b main
+        # git add -A
         git commit -m 'Deploying to gh-pages"' 
         # git push origin main:gh-pages
 
