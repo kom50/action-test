@@ -27,22 +27,12 @@ jobs:
         # build
         npm run build
 
-        # navigate into the build output directory
-        # cd dist
-
         echo 'Deploying to gh-pages...'
-        # git init
-        # git checkout -b main
-        # git add -A
-        # git commit -m 'Deploying to gh-pages"' 
-        # git push origin main:gh-pages
         ls
-        # git pull origin gh-pages
-        # git reset --hard HEAD
 
         git add dist -f
         git commit -m 'Deploying to gh-pages"' 
-        git subtree push --prefix dist origin gh-pages -f
+        git subtree push --prefix dist origin main:gh-pages
 
         # git subtree push --prefix dist origin gh-pages
 
