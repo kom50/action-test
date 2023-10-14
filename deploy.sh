@@ -23,7 +23,6 @@ git init
 git checkout -b main
 git add -A
 git commit -m 'deploy' 
-
 git remote -v
 # /git remote add origin https://kom50:$GITHUB_TOKEN@github/kom50/action-test.git
 git remote add origin https://kom50:$GITHUB_TOKEN@github.com/kom50/action-test.git
