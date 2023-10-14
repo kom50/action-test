@@ -15,3 +15,5 @@ jobs:
         git add .
         git commit -m "Commit message"
         git push origin om
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
