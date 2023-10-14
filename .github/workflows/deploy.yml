@@ -54,6 +54,7 @@ jobs:
         git reset --hard HEAD
 
         cd dist
+        
 
         git add . -f
         git commit -m 'Deploying to gh-pages"' 
