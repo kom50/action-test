@@ -23,6 +23,8 @@
 
               git --work-tree  dist add --all
               git --work-tree  dist commit -m gh-pages
+
+              echo "Pushing to gh-pages..."
               git push origin HEAD:gh-pages --force
               rm -r  dist 
               git  checkout -f main 
