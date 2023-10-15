@@ -1,40 +1,33 @@
-name: Deploy
+  name: Deploy to Github Pages
+  on:
+    push:
+      branches:
+        - main
+  jobs:
+    gh-pages-deploy:
+      name: Deploying to Github Pages
+      runs-on: ubuntu-latest
+      steps:
+          - uses: actions/checkout@v3
+          - uses: actions/setup-node@v3
+          - name: Install packages
+            run: npm i
+          - name: Set Creds
+            run: git config user.name "kom50" && git config user.email "omprakashkartik82280@gmail.com"
+          - name: Deploy
+            run: |
+              git checkout --orphan gh-pages
+               
+              echo "Building started..."
+              npm run build
 
-on:
-  push:
-    branches:
-      - main
-      
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Run Git commands
-      run: |
-        git config --global user.email "omprakashkartik82280@gmail.com"
-        git config --global user.name "kom50"
+              git --work-tree  dist add --all
+              git --work-tree  dist commit -m gh-pages
 
-        # Install depedencies
-        npm i
+              echo "Pushing to gh-pages..."
+              git push origin HEAD:gh-pages --force
+              rm -r  dist 
+              git  checkout -f main 
+              git  branch -D gh-pages 
 
-        ls
-
-        rm -rf dist
-        ls
-
-        # build
-        npm run build
-
-        echo 'Deploying to gh-pages...'
-        ls
-
-        git add dist -f
-        git commit -m 'Deploying to gh-pages"' 
-        # git subtree push --prefix dist origin main:gh-pages --force
-        git push origin `git subtree split --prefix dist main`:gh-pages --force
-
-        echo 'Done'
-      env:
-        github-token: ${{ secrets.GH_TOKEN }}
+              echo 'done'
