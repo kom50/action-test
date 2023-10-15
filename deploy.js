@@ -1,11 +1,9 @@
-/* eslint-disable no-console */
 import { execa } from "execa";
 import fs from "fs";
 
 (async () => {
     try {
         await execa("git", ["checkout", "--orphan", "gh-pages"]);
-        // eslint-disable-next-line no-console
         console.log("Building started...");
         await execa("npm", ["run", "build"]);
         // await execa("yarn", ["build"]);
@@ -20,7 +18,6 @@ import fs from "fs";
         await execa("git", ["branch", "-D", "gh-pages"]);
         console.log("Successfully deployed, check your settings");
     } catch (e) {
-        // eslint-disable-next-line no-console
         console.log(e.message);
         process.exit(1);
     }
