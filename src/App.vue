@@ -8,6 +8,7 @@ const count = ref(10)
   <div>
     <button @click="count++">count {{ count }}</button>
     <h1>Hii bro</h1>
+    <h1>New github action</h1>
   </div>
 </template>
 
